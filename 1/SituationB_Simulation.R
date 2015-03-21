@@ -1,7 +1,7 @@
 # Author: Patrick Sheehan
 # Purpose: Replicate Situation B in Simons et al. (2011)
 # Input: None
-# Output(s): % of simulated experiments with p < .1, .05, .01
+# Output(s): % of simulated experiments with p < .1, .05, .01 (percent.signif.X)
 
 # First, create function which mimics Situation B
 SituationB <- function(pval){
