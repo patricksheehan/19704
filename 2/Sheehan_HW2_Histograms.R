@@ -1,19 +1,21 @@
 # Author: Patrick Sheehan
 # Purpose: Extend the replication of Table 1.A and 2.A 
 #          from Bierens and Ginther (2001)      
-# Input: None (But requires "Birens_Ginther_Simulation.R" in working directory)
-# Output(s): Histograms
+# Input: None
+# Output(s): Histograms (one PDF file with all)
 
 # First, run my simulation replicating Table 1.A and 2.a
-source("Birens_Ginther_Simulation.R")
+require(AER) # Require data package
+data("CPS1988") # Put data in workspace
 # Part 1: Histograms (wages, log(wages), education, experience)
-wages <- CPS1988$wage # Get the data 
+# Get the data 
+wages <- CPS1988$wage 
 log.wages <- log(wages)
 education <- CPS1988$education
 experience <- CPS1988$experience
 pdf("histograms.pdf") # Begin PDF graphics driver
 wage.hist <- hist(wages,
-     breaks = c(seq(0, 3500, 50),max(wages)),
+     breaks = c(seq(0, 3500, 50),max(wages)), # FD bins + Outlier bin
      freq = TRUE,
      main = "Wages",
      xlim = c(0, 3.5e3),
@@ -36,4 +38,4 @@ hist(experience,
      xlab = "Experience (discrete years)",
      breaks = seq(min(experience), max(experience)+1, 1), # One bin per year
      right = FALSE,) # Mandate one year per bin
-dev.off()
+dev.off() # Done with pdf file
