@@ -4,11 +4,9 @@
 # Input: None
 # Output(s): Histograms (one PDF file with all)
 
-# First, run my simulation replicating Table 1.A and 2.a
 require(AER) # Require data package
 data("CPS1988") # Put data in workspace
 # Part 1: Histograms (wages, log(wages), education, experience)
-# Get the data 
 wages <- CPS1988$wage 
 log.wages <- log(wages)
 education <- CPS1988$education
