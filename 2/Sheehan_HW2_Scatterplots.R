@@ -17,7 +17,7 @@ log.wages <- log(wages)
 education <- CPS1988$education
 experience <- CPS1988$experience
 # Part 2: Scatterplots (wages, log(wages) vs. education, experience)
-pdf("scatterplots.pdf") # Begin PDF graphics driver
+pdf("scatterplots%d.pdf", onefile=FALSE) # Begin PDF graphics driver
 # Education vs. Wages
 plot(education, wages,
      main="Wage vs. Education",

@@ -22,7 +22,7 @@ Table.2A <- lm(log(wage) ~ education + experience + I(experience^2) +
                data= CPS1988)
 Table.2A.residuals <- residuals(Table.2A)
 Table.2A.fitted <- fitted(Table.2A)
-pdf("residuals.pdf") # Begin PDF graphics driver
+pdf("residuals%d.pdf", onefile=FALSE) # Begin PDF graphics driver
 # plot 1A residuals
 plot(Table.1A.fitted, Table.1A.residuals,
      main="Linear Regression Residuals vs. Predicted log(Wage) Values",

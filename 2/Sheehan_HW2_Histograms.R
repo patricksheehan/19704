@@ -11,7 +11,7 @@ wages <- CPS1988$wage
 log.wages <- log(wages)
 education <- CPS1988$education
 experience <- CPS1988$experience
-pdf("histograms.pdf") # Begin PDF graphics driver
+pdf("histograms%d.pdf", onefile=FALSE) # Begin PDF graphics driver
 wage.hist <- hist(wages,
      breaks = c(seq(0, 3500, 50),max(wages)), # FD bins + Outlier bin
      freq = TRUE,

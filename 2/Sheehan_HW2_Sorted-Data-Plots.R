@@ -13,7 +13,7 @@ log.wages <- log(wages)
 norm.wages <- rnorm(length(wages), mean(wages), sd(wages))
 norm.log.wages <- rnorm(length(log.wages), mean(log.wages), sd(log.wages))
 # Plot the sorted data
-pdf("sorted-data-plots.pdf") # Begin PDF graphics driver
+pdf("sorted-data-plots%d.pdf", onefile=FALSE) # Begin PDF graphics driver
 # Wage vs. normal 
 min1 <- min(wages, norm.wages)  # Find the smallest value (From lecture notes)
 max1 <- max(wages, norm.wages)  # Find the largest value (From lecture notes)
